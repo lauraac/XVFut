@@ -2012,3 +2012,193 @@ button:active,
   }
 
 }
+
+/* ==========================================
+   IMAGEN FINAL
+========================================== */
+
+.finale {
+  margin: 20px 0 14px;
+
+  overflow: hidden;
+
+  border-radius: 26px;
+
+  border:
+    1px solid rgba(231, 196, 108, .30);
+
+  box-shadow:
+    0 20px 45px rgba(45, 8, 27, .30);
+
+  background: transparent;
+}
+
+
+.finale-image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  border-radius: inherit;
+
+  animation:
+    finaleSoftZoom
+    10s ease-in-out
+    infinite alternate;
+
+  transform-origin: center;
+}
+
+
+@keyframes finaleSoftZoom {
+
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.035);
+  }
+
+}
+
+
+/* ==========================================
+   FOOTER PROMOCIONAL PEQUEÑO
+========================================== */
+
+.promo-footer {
+  width: min(100% - 28px, 720px);
+
+  margin:
+    8px auto
+    22px;
+
+  text-align: center;
+}
+
+
+.promo-footer__link {
+  display: block;
+
+  width: 100%;
+
+  max-width: 500px;
+
+  margin: 0 auto;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  border:
+    1px solid rgba(231, 196, 108, .28);
+
+  box-shadow:
+    0 8px 24px rgba(35, 6, 20, .24);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+
+/* IMAGEN PEQUEÑA */
+
+.promo-footer__image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  border-radius: inherit;
+}
+
+
+/* EFECTO AL TOCAR */
+
+.promo-footer__link:active {
+  transform: scale(.98);
+}
+
+
+/* BRILLO QUE PASA POR ENCIMA */
+
+.promo-footer__link::after {
+  content: "";
+
+  position: absolute;
+
+  top: -40%;
+  left: -75%;
+
+  width: 35%;
+  height: 180%;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      110deg,
+      transparent,
+      rgba(255,255,255,.12),
+      rgba(255,255,255,.75),
+      rgba(255,234,190,.65),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  animation:
+    promoFooterShine
+    4.5s ease-in-out
+    infinite;
+}
+
+
+@keyframes promoFooterShine {
+
+  0%,
+  55% {
+    left: -75%;
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  78% {
+    left: 135%;
+    opacity: 1;
+  }
+
+  82%,
+  100% {
+    left: 135%;
+    opacity: 0;
+  }
+
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+  .promo-footer {
+    width: calc(100% - 34px);
+
+    margin-top: 7px;
+  }
+
+  .promo-footer__link {
+    max-width: 390px;
+
+    border-radius: 15px;
+  }
+
+}
