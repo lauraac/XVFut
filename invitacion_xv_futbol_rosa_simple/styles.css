@@ -1,0 +1,2014 @@
+:root{
+  --wine:#4b1835;--wine2:#7d3559;--pink:#f1b7cf;--pink2:#ffe1ee;--rose:#d67ea4;
+  --gold:#d4af63;--gold2:#f3d79a;--white:#fff9fc;--soft:#f4dbe7;
+  --border:rgba(255,220,235,.22);--shadow:0 24px 70px rgba(33,8,24,.34)
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% -10%,#9d5277 0,#54203d 34%,#1b0914 100%);color:var(--white);font-family:Montserrat,system-ui,sans-serif;overflow-x:hidden}img,video{display:block;max-width:100%}a{color:inherit}.page-shell{width:min(100%,720px);margin:0 auto;padding:0 14px 90px}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(circle at 15% 15%,rgba(255,201,225,.13),transparent 25%),radial-gradient(circle at 85% 35%,rgba(224,188,105,.08),transparent 20%)}
+/* VIDEO INICIAL */
+.intro{position:fixed;inset:0;z-index:1000;background:#120711;overflow:hidden;transition:opacity .7s ease,visibility .7s ease}.intro.is-hidden{opacity:0;visibility:hidden}.intro-video{width:100%;height:100%;object-fit:cover}.intro-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,5,14,.08),rgba(20,5,14,.28) 55%,rgba(20,5,14,.86))}.intro-content{position:absolute;left:22px;right:22px;bottom:90px;text-align:center}.intro-content p{margin:0;color:var(--gold2);letter-spacing:.22em;text-transform:uppercase;font-size:.72rem}.intro-content h1{font:400 clamp(4rem,18vw,7rem)/.95 "Great Vibes",cursive;margin:8px 0;color:white;text-shadow:0 0 28px rgba(255,188,218,.65)}.intro-content span{font-family:Cinzel,serif;letter-spacing:.16em;font-size:.78rem}.sound-btn{position:absolute;top:max(18px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);border:1px solid rgba(255,255,255,.3);background:rgba(67,22,48,.55);color:#fff;border-radius:999px;padding:10px 14px;backdrop-filter:blur(10px)}
+.music-btn{position:fixed;right:16px;bottom:18px;z-index:100;width:54px;height:54px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:linear-gradient(135deg,#ffd8e9,#dc92b3);color:#5a1f3d;font-size:1.5rem;box-shadow:0 10px 30px rgba(0,0,0,.3);opacity:0;visibility:hidden;transition:.3s}.music-btn.show{opacity:1;visibility:visible}.music-btn.playing{animation:pulse 1.8s infinite}@keyframes pulse{50%{box-shadow:0 0 0 9px rgba(255,190,219,.08),0 0 30px rgba(255,190,219,.5)}}
+/* COMPONENTES */
+.hero-card,.section,.feature-image,.dress-code,.gift-section,.finale{margin:16px 0;border:1px solid var(--border);border-radius:28px;box-shadow:var(--shadow);overflow:hidden}.hero-card,.section{background:linear-gradient(145deg,rgba(98,36,69,.9),rgba(48,15,34,.94))}.section{padding:24px 18px}.eyebrow{margin:0 0 8px;text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;color:var(--gold2)}.section-title{font:600 1.5rem/1.2 Cinzel,serif;margin:4px 0 16px}.section-copy{color:var(--soft);line-height:1.7;text-align:center}.hero-image{width:100%;height:auto}.hero-info{padding:20px;text-align:center}.hero-kicker{font-family:Cinzel,serif;letter-spacing:.24em;color:var(--gold2);font-size:.76rem}.hero-info h2{font:400 clamp(3.4rem,14vw,5.8rem)/1 "Great Vibes",cursive;margin:5px 0;color:#fff}.hero-phrase{color:var(--soft)}.date-chip{display:inline-flex;flex-direction:column;gap:4px;margin:10px auto 18px;padding:10px 18px;border:1px solid rgba(212,175,99,.55);border-radius:999px;background:rgba(49,16,35,.58);color:#ffe7b5}.hero-actions{display:grid;gap:10px}.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border-radius:999px;min-height:50px;padding:12px 20px;border:1px solid transparent;font:600 .9rem Montserrat,sans-serif;cursor:pointer}.btn-primary{background:linear-gradient(135deg,#ffe4ef,#f1aeca);color:#5d2140;box-shadow:0 12px 30px rgba(214,126,164,.2)}.btn-ghost{background:rgba(55,17,38,.52);border-color:rgba(255,226,239,.3);color:white}.btn-small{min-height:44px;font-size:.82rem}.btn-full{width:100%}
+/* PLACEHOLDERS DE IMÁGENES */
+.image-placeholder{position:relative;display:grid;place-items:center;overflow:hidden;background:linear-gradient(135deg,rgba(255,218,234,.10),rgba(212,175,99,.07));border:1px dashed rgba(255,226,239,.3)}.image-placeholder:after{content:attr(data-placeholder);position:absolute;inset:auto 16px 16px;padding:8px 11px;border-radius:999px;background:rgba(45,14,32,.72);color:#ffe9f3;font-size:.68rem;text-align:center;backdrop-filter:blur(8px)}.image-placeholder:has(img:not([style*="display: none"])):after{opacity:0}.image-placeholder img{width:100%;height:100%;object-fit:cover}.image-placeholder--hero{min-height:520px;border:0;border-radius:0}.image-placeholder--portrait{min-height:430px;border-radius:24px}.image-placeholder--wide{min-height:360px;border-radius:28px}.image-placeholder--dress{position:absolute;inset:0;border:0}.image-placeholder--gift{width:min(240px,72%);min-height:220px;margin:0 auto;border:0;background:transparent}.image-placeholder--gift:after{bottom:8px}
+.image-feature{text-align:center}.names-block{display:grid;gap:7px;text-align:center;margin-top:16px}.names-block strong{font-family:Cinzel,serif;font-size:1.03rem}.names-block span{font:400 2rem "Great Vibes",cursive;color:var(--gold2)}
+/* COUNTDOWN */
+.event-date{text-align:center;color:var(--soft)}.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.countdown>div{text-align:center;padding:13px 4px;border-radius:18px;background:rgba(46,14,32,.65);border:1px solid rgba(255,220,235,.15)}.countdown span{display:block;font:600 1.35rem Cinzel,serif;color:var(--pink2)}.countdown small{font-size:.65rem;color:#edc8d9}
+/* CARRUSEL */
+.carousel{position:relative}.carousel-viewport{overflow:hidden;border-radius:24px}.carousel-track{display:flex;transition:transform .55s cubic-bezier(.2,.7,.2,1)}.slide{min-width:100%;background:rgba(48,15,34,.72)}.slide-photo{height:430px;background:linear-gradient(145deg,rgba(255,218,234,.12),rgba(212,175,99,.05));position:relative}.slide-photo:after{content:"Agrega aquí tu foto";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:.78rem;color:#f6dce8}.slide-photo img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}.slide>div:last-child{padding:16px}.slide h3{font-family:Cinzel,serif;margin:0 0 6px}.slide p{margin:0;color:var(--soft);line-height:1.6}.carousel-btn{position:absolute;top:42%;z-index:5;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.28);background:rgba(54,17,38,.74);color:white;font-size:2rem}.carousel-prev{left:8px}.carousel-next{right:8px}.dots{display:flex;justify-content:center;gap:7px;margin-top:12px}.dot{width:8px;height:8px;border-radius:50%;border:0;background:rgba(255,255,255,.25)}.dot.active{width:22px;border-radius:10px;background:var(--pink)}
+/* EVENTO */
+.event-grid{display:grid;gap:12px}.event-card{padding:18px;border-radius:22px;background:rgba(47,14,33,.58);border:1px solid rgba(255,224,237,.14);text-align:center}.event-icon{font-size:2rem}.event-card h3{font-family:Cinzel,serif}.event-name{font-weight:600;color:var(--pink2)}
+/* VESTIMENTA */
+.dress-code{position:relative;min-height:520px;background:#4b1835}.dress-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(60,18,42,.08),rgba(49,14,34,.24) 35%,rgba(39,10,28,.9));z-index:1}.dress-content{position:absolute;left:20px;right:20px;bottom:35px;z-index:3;text-align:center}.dress-eyebrow{color:var(--gold2);letter-spacing:.22em;text-transform:uppercase;font-size:.72rem}.dress-content h2{font:400 clamp(3.5rem,13vw,5rem)/1 "Great Vibes",cursive;margin:0;text-shadow:0 0 20px rgba(255,196,221,.35)}.dress-line,.gift-line{width:95px;height:1px;margin:8px auto 16px;background:linear-gradient(90deg,transparent,var(--gold2),transparent)}.dress-content strong,.gift-content strong{color:var(--gold2)}
+/* LLUVIA DE SOBRES */
+.gift-section{position:relative;min-height:510px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 25%,rgba(255,191,220,.22),transparent 35%),linear-gradient(160deg,#833f63,#51203e 55%,#2a0d20)}.gift-content{position:relative;z-index:3;max-width:470px;padding:36px 24px;text-align:center}.gift-eyebrow{color:var(--gold2);letter-spacing:.2em;text-transform:uppercase;font-size:.72rem}.gift-content h2{font:400 clamp(3.5rem,13vw,5rem)/1 "Great Vibes",cursive;margin:0}.gift-image{object-fit:contain!important;animation:floatEnvelope 4s ease-in-out infinite;filter:drop-shadow(0 12px 24px rgba(0,0,0,.25))}.gift-content p{line-height:1.65}.gift-sparkles{position:absolute;inset:0;pointer-events:none}.gift-sparkles span{position:absolute;color:#fff1bd;text-shadow:0 0 8px #fff,0 0 18px #ffd1e4;animation:sparkle 2.8s ease-in-out infinite}.gift-sparkles span:nth-child(1){top:13%;left:14%}.gift-sparkles span:nth-child(2){top:25%;right:15%;animation-delay:.8s}.gift-sparkles span:nth-child(3){bottom:20%;left:20%;animation-delay:1.4s}.gift-sparkles span:nth-child(4){bottom:14%;right:16%;animation-delay:1.9s}@keyframes floatEnvelope{50%{transform:translateY(-10px) scale(1.03)}}@keyframes sparkle{50%{opacity:1;transform:scale(1.35)}0%,100%{opacity:.25;transform:scale(.7)}}
+/* FINAL */
+.finale{min-height:500px;position:relative;background:linear-gradient(180deg,rgba(103,40,72,.2),rgba(34,8,24,.92)),url('./img/final.jpg') center/cover}.finale-content{position:absolute;left:20px;right:20px;bottom:34px;text-align:center}.finale-content h2{font:400 clamp(3rem,12vw,5rem)/1 "Great Vibes",cursive;margin:0}.finale-content strong{font-family:Cinzel,serif;color:var(--gold2)}
+/* EFECTOS */
+.reveal{opacity:0;transform:translateY(22px);transition:.7s ease}.reveal.visible{opacity:1;transform:none}.spark{position:fixed;width:4px;height:4px;border-radius:50%;background:#fff;box-shadow:0 0 12px 3px rgba(255,196,221,.72);pointer-events:none;z-index:20;animation:fall linear forwards}@keyframes fall{from{transform:translateY(-10vh) scale(.5);opacity:0}20%{opacity:1}to{transform:translateY(110vh) scale(1.2);opacity:0}}
+.form-msg{text-align:center;color:#f4dbe7;font-size:.82rem;line-height:1.5}
+/* LIGHTBOX */
+.photo-lightbox{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px;background:radial-gradient(circle at center,rgba(125,53,89,.8),rgba(21,5,15,.97));backdrop-filter:blur(12px);opacity:0;visibility:hidden;transition:.35s}.photo-lightbox.is-open{opacity:1;visibility:visible}.photo-lightbox-frame{max-width:92vw;max-height:82vh;padding:7px;border:1px solid rgba(212,175,99,.8);border-radius:24px;background:rgba(255,255,255,.05)}.photo-lightbox-frame img{max-width:88vw;max-height:78vh;object-fit:contain;border-radius:18px}.photo-lightbox-close{position:fixed;top:20px;right:25px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(212,175,99,.7);background:rgba(58,18,43,.85);color:var(--gold2);font-size:30px}.photo-lightbox-text{margin-top:18px;color:var(--gold2);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+@media(min-width:760px){body{padding:28px 0}.page-shell{padding:0 0 100px}.hero-actions{display:flex;justify-content:center}.hero-actions .btn{min-width:210px}.event-grid{grid-template-columns:1fr 1fr}.section{padding:32px}.slide-photo{height:520px}}
+@media(max-width:600px){.image-placeholder--hero{min-height:500px}.dress-code{min-height:470px;border-radius:22px}.gift-section{min-height:470px;border-radius:23px}.slide-photo{height:410px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+/* =========================================
+   🌸 BOTÓN ROSA - ACTIVAR SONIDO DEL INTRO
+========================================= */
+
+.intro-sound-btn {
+  position: absolute;
+
+  top: max(22px, env(safe-area-inset-top));
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 50;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 11px 19px;
+
+  border: 1px solid rgba(255, 235, 243, .75);
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(244, 177, 203, .94),
+      rgba(205, 103, 147, .94)
+    );
+
+  color: #ffffff;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 8px 30px rgba(80, 25, 51, .35),
+    0 0 20px rgba(255, 192, 218, .45),
+    inset 0 1px 0 rgba(255, 255, 255, .50);
+
+  animation: introSoundGlow 2.2s ease-in-out infinite;
+
+  transition:
+    opacity .45s ease,
+    visibility .45s ease,
+    transform .45s ease;
+}
+
+
+/* NOTA MUSICAL */
+
+.intro-sound-btn__icon {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.20);
+
+  border: 1px solid rgba(255,255,255,.35);
+
+  font-size: 17px;
+
+  text-shadow:
+    0 0 8px white;
+}
+
+
+/* TEXTO */
+
+.intro-sound-btn__text {
+  white-space: nowrap;
+
+  text-shadow:
+    0 2px 7px rgba(80, 20, 50, .35);
+}
+
+
+/* ESTRELLITA */
+
+.intro-sound-btn__sparkle {
+  color: #ffe7a3;
+
+  font-size: 16px;
+
+  text-shadow:
+    0 0 5px white,
+    0 0 13px #ffd978;
+
+  animation: introSoundSparkle 1.6s ease-in-out infinite;
+}
+
+
+/* CUANDO TOCAN LA PANTALLA */
+
+.intro-sound-btn.is-hidden {
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transform:
+    translateX(-50%)
+    translateY(-15px)
+    scale(.9);
+
+  animation: none;
+}
+
+
+/* BRILLO DEL BOTÓN */
+
+@keyframes introSoundGlow {
+
+  0%,
+  100% {
+
+    transform:
+      translateX(-50%)
+      scale(1);
+
+    box-shadow:
+      0 8px 30px rgba(80, 25, 51, .30),
+      0 0 13px rgba(255, 192, 218, .30);
+
+  }
+
+  50% {
+
+    transform:
+      translateX(-50%)
+      scale(1.04);
+
+    box-shadow:
+      0 10px 35px rgba(80, 25, 51, .35),
+      0 0 27px rgba(255, 192, 218, .75),
+      0 0 45px rgba(255, 220, 232, .25);
+
+  }
+
+}
+
+
+/* BRILLO DE LA ESTRELLA */
+
+@keyframes introSoundSparkle {
+
+  0%,
+  100% {
+    opacity: .4;
+    transform: scale(.7) rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.3) rotate(20deg);
+  }
+
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+  .intro-sound-btn {
+
+    top: max(18px, env(safe-area-inset-top));
+
+    padding: 10px 16px;
+
+    font-size: 12px;
+
+  }
+
+}
+
+/* =========================================
+   🌸 BOTÓN SALTAR VIDEO
+========================================= */
+
+.skip-intro-btn {
+  position: absolute;
+
+  bottom: max(28px, env(safe-area-inset-bottom));
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 50;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 10px 18px;
+
+  border-radius: 999px;
+
+  border:
+    1px solid rgba(255, 255, 255, .35);
+
+  background:
+    rgba(84, 26, 53, .48);
+
+  color: rgba(255, 255, 255, .92);
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: .04em;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, .20);
+
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    opacity .25s ease;
+}
+
+.skip-intro-btn span {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.skip-intro-btn:hover {
+  transform:
+    translateX(-50%)
+    translateY(-2px);
+
+  background:
+    rgba(193, 99, 143, .72);
+}
+
+.skip-intro-btn:active {
+  transform:
+    translateX(-50%)
+    scale(.96);
+}
+
+@media (max-width: 600px) {
+
+  .skip-intro-btn {
+    bottom: max(20px, env(safe-area-inset-bottom));
+
+    padding: 9px 16px;
+
+    font-size: 11px;
+  }
+
+}
+/* =========================================
+   PORTADA - BLOQUE INFERIOR ESPECIAL
+========================================= */
+
+.hero-info--special {
+  position: relative;
+
+  padding: 30px 22px 26px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(255, 171, 204, .13),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      #5e1838 0%,
+      #48112b 55%,
+      #35101f 100%
+    );
+
+  color: white;
+}
+
+
+/* CORONA */
+
+.hero-info__crown {
+  margin-bottom: 3px;
+
+  color: #efc87c;
+
+  font-size: 22px;
+
+  text-shadow:
+    0 0 8px rgba(255, 222, 155, .65);
+}
+
+
+/* MIS XV AÑOS */
+
+.hero-info--special .hero-kicker {
+  margin: 0 0 7px;
+
+  font-family: "Cinzel", serif;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: .34em;
+
+  color: #efc77d;
+}
+
+
+/* UNA NOCHE INOLVIDABLE */
+
+.hero-special-title {
+  margin: 0;
+
+  font-family: "Great Vibes", cursive;
+
+  font-size: clamp(48px, 10vw, 72px);
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: #fff7fa;
+
+  text-shadow:
+    0 0 7px rgba(255,255,255,.55),
+    0 0 20px rgba(241, 146, 185, .32);
+}
+
+
+/* SUBTÍTULO */
+
+.hero-special-subtitle {
+  margin: 10px 0 18px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 13px;
+
+  color: rgba(255,255,255,.82);
+}
+
+
+/* FECHA ESPECIAL */
+
+.date-chip--special {
+  width: min(100%, 350px);
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  padding: 11px 17px;
+
+  border-radius: 999px;
+
+  border:
+    1px solid rgba(231, 196, 108, .75);
+
+  background:
+    rgba(64, 9, 32, .48);
+
+  color: white;
+}
+
+
+.date-icon {
+  font-size: 20px;
+
+  color: #efc87c;
+}
+
+
+.date-chip__text {
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1.35;
+}
+
+
+.date-chip__text strong {
+  font-family: "Cinzel", serif;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  color: #fff8fa;
+}
+
+
+.date-chip__text span {
+  font-size: 12px;
+
+  color: rgba(255,255,255,.86);
+}
+
+
+/* BOTONES */
+
+.hero-actions--special {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 11px;
+
+  max-width: 430px;
+
+  margin: 0 auto;
+}
+
+
+.hero-actions--special .btn {
+  min-height: 48px;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+.hero-actions--special .btn-primary {
+  background:
+    linear-gradient(
+      135deg,
+      #ffd5e5,
+      #efa7c3
+    );
+
+  color: #591934;
+
+  box-shadow:
+    0 8px 22px rgba(240, 142, 179, .18);
+}
+
+
+.hero-actions--special .btn-ghost {
+  background:
+    rgba(74, 12, 39, .38);
+
+  border:
+    1px solid rgba(234, 190, 115, .65);
+
+  color: white;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+  .hero-info--special {
+    padding: 26px 17px 23px;
+  }
+
+  .hero-special-title {
+    font-size: 50px;
+  }
+
+  .hero-actions--special {
+    gap: 9px;
+  }
+
+  .hero-actions--special .btn {
+    font-size: 11px;
+
+    padding: 10px 12px;
+  }
+
+}
+/* BRILLOS PERSONALIZADOS QUE APARECEN EN PANTALLA */
+
+.magic-custom-sparkle {
+  position: fixed;
+
+  width: 30px;
+  height: auto;
+
+  z-index: 9998;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  filter:
+    drop-shadow(0 0 5px rgba(255,255,255,.9))
+    drop-shadow(0 0 12px rgba(255,190,215,.8))
+    drop-shadow(0 0 24px rgba(255,170,205,.5));
+
+  animation: customSparkleMagic 5s ease-in-out infinite;
+}
+
+
+@keyframes customSparkleMagic {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      scale(.3)
+      rotate(-12deg);
+  }
+
+  25% {
+    opacity: .55;
+
+    transform:
+      scale(.85)
+      rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform:
+      scale(1.25)
+      rotate(12deg);
+  }
+
+  75% {
+    opacity: .55;
+
+    transform:
+      scale(.9)
+      rotate(4deg);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      scale(.3)
+      rotate(-10deg);
+  }
+}
+/* =========================================
+   BALÓN GIRANDO EN RECEPCIÓN
+========================================= */
+
+.event-icon--spin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: spinBall 3s linear infinite;
+
+  transform-origin: center center;
+  will-change: transform;
+}
+
+@keyframes spinBall {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================
+   ⚽ BALONCITOS ROSAS - CUENTA REGRESIVA
+========================================== */
+
+.countdown-section {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* CONTENEDOR */
+
+.countdown-balls {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* LOS BALONES */
+
+.countdown-ball {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+
+  font-size: 21px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffe7f0,
+      #f5adc8
+    );
+
+  box-shadow:
+    0 5px 15px rgba(107, 31, 67, .25),
+    0 0 12px rgba(255, 192, 216, .45);
+
+  filter:
+    sepia(.25)
+    saturate(.8);
+
+  opacity: .75;
+
+  animation:
+    floatingFootball 5s ease-in-out infinite;
+}
+
+
+/* POSICIONES */
+
+.ball-1 {
+  top: 15px;
+  right: 20px;
+
+  width: 28px;
+  height: 28px;
+
+  font-size: 18px;
+
+  animation-delay: 0s;
+}
+
+
+.ball-2 {
+  top: 68px;
+  left: 18px;
+
+  width: 23px;
+  height: 23px;
+
+  font-size: 15px;
+
+  opacity: .55;
+
+  animation-delay: 1.1s;
+}
+
+
+.ball-3 {
+  bottom: 16px;
+  right: 38px;
+
+  width: 25px;
+  height: 25px;
+
+  font-size: 16px;
+
+  opacity: .55;
+
+  animation-delay: 2s;
+}
+
+
+.ball-4 {
+  bottom: 28px;
+  left: 25px;
+
+  width: 18px;
+  height: 18px;
+
+  font-size: 12px;
+
+  opacity: .40;
+
+  animation-delay: 2.8s;
+}
+
+
+/* CONTENIDO SIEMPRE ENCIMA */
+
+.countdown-section > p,
+.countdown-section > h2,
+.countdown-section > .countdown {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* MOVIMIENTO */
+
+@keyframes floatingFootball {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0)
+      rotate(0deg)
+      scale(1);
+
+  }
+
+  25% {
+
+    transform:
+      translateY(-8px)
+      rotate(40deg)
+      scale(1.05);
+
+  }
+
+  50% {
+
+    transform:
+      translateY(2px)
+      rotate(90deg)
+      scale(.96);
+
+  }
+
+  75% {
+
+    transform:
+      translateY(-5px)
+      rotate(150deg)
+      scale(1.04);
+
+  }
+
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+  .ball-1 {
+    right: 10px;
+  }
+
+  .ball-2 {
+    left: 8px;
+  }
+
+  .ball-3 {
+    right: 15px;
+  }
+
+  .ball-4 {
+    left: 12px;
+  }
+
+}
+
+/* ==========================================
+   LLUVIA DE SOBRES - IMAGEN COMPLETA
+========================================== */
+
+.gift-card-image {
+  position: relative;
+
+  width: 100%;
+
+  margin: 18px 0;
+
+  border-radius: 28px;
+  overflow: hidden;
+
+  box-shadow:
+    0 20px 45px rgba(53, 9, 30, .30);
+
+  border:
+    1px solid rgba(231, 196, 108, .28);
+}
+
+
+/* IMAGEN DE FONDO */
+
+.gift-card-image__background {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+
+/* SOBRE FLOTANDO */
+
+.gift-card-image__envelope {
+  position: absolute;
+
+  left: 50%;
+  top: 38%;
+
+  width: min(31%, 175px);
+  height: auto;
+
+  z-index: 3;
+
+  transform:
+    translate(-50%, -50%);
+
+  transform-origin: center;
+
+  filter:
+    drop-shadow(
+      0 12px 14px
+      rgba(66, 17, 39, .28)
+    )
+    drop-shadow(
+      0 0 16px
+      rgba(255, 217, 231, .40)
+    );
+
+  animation:
+    floatingGiftEnvelope
+    3.4s
+    ease-in-out
+    infinite;
+}
+
+
+/* MOVIMIENTO DEL SOBRE */
+
+@keyframes floatingGiftEnvelope {
+
+  0%,
+  100% {
+
+    transform:
+      translate(-50%, -50%)
+      translateY(0)
+      rotate(-2deg)
+      scale(1);
+
+  }
+
+  50% {
+
+    transform:
+      translate(-50%, -50%)
+      translateY(-12px)
+      rotate(2deg)
+      scale(1.04);
+
+  }
+
+}
+
+
+/* PEQUEÑO BRILLO SOBRE EL SOBRE */
+
+.gift-card-image::after {
+  content: "✦";
+
+  position: absolute;
+
+  top: 23%;
+  left: 65%;
+
+  z-index: 4;
+
+  color: #fff0b5;
+
+  font-size: 20px;
+
+  text-shadow:
+    0 0 5px white,
+    0 0 13px #ffd991;
+
+  pointer-events: none;
+
+  animation:
+    giftEnvelopeSparkle
+    2s ease-in-out
+    infinite;
+}
+
+
+@keyframes giftEnvelopeSparkle {
+
+  0%,
+  100% {
+    opacity: .25;
+    transform: scale(.6);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+  .gift-card-image {
+    border-radius: 22px;
+  }
+
+  .gift-card-image__envelope {
+    width: 30%;
+  }
+
+}
+
+/* ==========================================
+   ⚽ BALONES DENTRO DE CADA CUADRO
+========================================== */
+
+.countdown-box {
+  position: relative;
+
+  overflow: hidden;
+
+  min-height: 68px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 5px 8px;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(74, 14, 43, .82),
+      rgba(49, 8, 29, .92)
+    );
+
+  border:
+    1px solid rgba(235, 180, 205, .18);
+}
+
+
+/* NÚMEROS */
+
+.countdown-box > span:not(.countdown-ball-inside) {
+  position: relative;
+
+  z-index: 2;
+
+  font-family: "Cinzel", serif;
+
+  font-size: 1.35rem;
+
+  font-weight: 600;
+
+  color: #fff6fa;
+}
+
+
+/* TEXTO */
+
+.countdown-box small {
+  position: relative;
+
+  z-index: 2;
+
+  margin-top: 3px;
+
+  font-size: .65rem;
+
+  color: #f3d9e5;
+}
+
+
+/* BALÓN */
+
+.countdown-ball-inside {
+  position: absolute;
+
+  top: 8px;
+  right: 9px;
+
+  z-index: 1;
+
+  font-size: 17px;
+
+  opacity: .55;
+
+  filter:
+    drop-shadow(
+      0 0 6px
+      rgba(255, 200, 225, .65)
+    );
+
+  animation:
+    ballBounceInside
+    1.8s
+    ease-in-out
+    infinite;
+}
+
+
+/* DISTINTOS TIEMPOS */
+
+.ball-delay-1 {
+  animation-delay: .35s;
+}
+
+.ball-delay-2 {
+  animation-delay: .7s;
+}
+
+.ball-delay-3 {
+  animation-delay: 1.05s;
+}
+
+
+/* MOVIMIENTO */
+
+@keyframes ballBounceInside {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg)
+      scale(1);
+  }
+
+  45% {
+    transform:
+      translateY(18px)
+      rotate(120deg)
+      scale(.92);
+  }
+
+  70% {
+    transform:
+      translateY(9px)
+      rotate(210deg)
+      scale(1.02);
+  }
+
+}
+
+
+/* UN POCO MÁS GRANDE EN CELULAR */
+
+@media (max-width: 600px) {
+
+  .countdown-ball-inside {
+    font-size: 16px;
+    top: 7px;
+    right: 7px;
+  }
+
+}
+
+/* ==========================================
+   LLUVIA DE SOBRES
+   Fondo fijo + sobre flotante
+========================================== */
+
+.gift-card-image {
+  position: relative;
+
+  width: 100%;
+
+  margin: 20px 0;
+
+  overflow: hidden;
+
+  border-radius: 26px;
+
+  border:
+    1px solid rgba(231, 196, 108, .30);
+
+  box-shadow:
+    0 20px 48px rgba(55, 10, 31, .30);
+
+  background: #f8dbe6;
+}
+
+
+/* ==========================================
+   IMAGEN COMPLETA DE FONDO
+========================================== */
+
+.gift-card-image__background {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: cover;
+
+  border-radius: inherit;
+}
+
+
+/* ==========================================
+   SOBRE QUE FLOTA ENCIMA
+========================================== */
+
+.gift-card-image__envelope {
+  position: absolute;
+
+  left: 50%;
+
+  /* Cambia este número si quieres
+     subir o bajar el sobre */
+  top: 52%;
+
+  width: min(32%, 190px);
+  height: auto;
+
+  z-index: 5;
+
+  transform:
+    translate(-50%, -50%);
+
+  transform-origin: center;
+
+  filter:
+    drop-shadow(
+      0 14px 16px
+      rgba(63, 18, 38, .28)
+    )
+    drop-shadow(
+      0 0 20px
+      rgba(255, 221, 232, .65)
+    );
+
+  animation:
+    envelopeFloating
+    3.4s
+    ease-in-out
+    infinite;
+}
+
+
+/* ==========================================
+   MOVIMIENTO DEL SOBRE
+========================================== */
+
+@keyframes envelopeFloating {
+
+  0%,
+  100% {
+
+    transform:
+      translate(-50%, -50%)
+      translateY(0)
+      rotate(-2deg)
+      scale(1);
+
+  }
+
+  50% {
+
+    transform:
+      translate(-50%, -50%)
+      translateY(-13px)
+      rotate(2deg)
+      scale(1.04);
+
+  }
+
+}
+
+
+/* ==========================================
+   BRILLITOS ALREDEDOR
+========================================== */
+
+.gift-card-image__sparkle {
+  position: absolute;
+
+  z-index: 6;
+
+  color: #fff4c5;
+
+  pointer-events: none;
+
+  text-shadow:
+    0 0 6px white,
+    0 0 14px #ffd982,
+    0 0 25px #f3b866;
+
+  animation:
+    giftCardSparkle
+    2.2s
+    ease-in-out
+    infinite;
+}
+
+
+.sparkle-1 {
+  top: 40%;
+  left: 32%;
+
+  font-size: 17px;
+}
+
+
+.sparkle-2 {
+  top: 45%;
+  right: 30%;
+
+  font-size: 13px;
+
+  animation-delay: .7s;
+}
+
+
+.sparkle-3 {
+  top: 62%;
+  right: 36%;
+
+  font-size: 15px;
+
+  animation-delay: 1.2s;
+}
+
+
+@keyframes giftCardSparkle {
+
+  0%,
+  100% {
+    opacity: .25;
+
+    transform:
+      scale(.6)
+      rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform:
+      scale(1.3)
+      rotate(18deg);
+  }
+
+}
+
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width: 600px) {
+
+  .gift-card-image {
+    border-radius: 20px;
+  }
+
+  .gift-card-image__envelope {
+    width: 34%;
+
+    top: 52%;
+  }
+
+}
+
+/* ==========================================
+   CÓDIGO DE VESTIMENTA
+   fondo fijo + figuras flotantes
+========================================== */
+
+.dress-code-special {
+  position: relative;
+
+  width: 100%;
+  min-height: 560px;
+
+  margin: 20px 0;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  border:
+    1px solid rgba(231, 196, 108, .30);
+
+  box-shadow:
+    0 22px 50px rgba(55, 10, 31, .30);
+
+  background: #f8dbe6;
+}
+
+
+/* ==========================================
+   FONDO
+========================================== */
+
+.dress-code-special__background {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: 0;
+}
+
+
+/* SOMBRA SUAVE PARA LEER EL TEXTO */
+
+.dress-code-special::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.02) 0%,
+      rgba(82, 20, 51, .08) 45%,
+      rgba(72, 14, 43, .70) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ==========================================
+   FIGURAS HOMBRE / MUJER
+========================================== */
+
+.dress-code-special__person {
+  position: absolute;
+
+  z-index: 3;
+
+  height: auto;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 14px 18px
+      rgba(65, 17, 39, .30)
+    )
+    drop-shadow(
+      0 0 15px
+      rgba(255, 220, 233, .30)
+    );
+}
+
+
+/* MUJER */
+
+.dress-code-special__woman {
+  left: 4%;
+  bottom: 82px;
+
+  width: min(43%, 280px);
+
+  animation:
+    womanFloat
+    4s
+    ease-in-out
+    infinite;
+}
+
+
+/* HOMBRE */
+
+.dress-code-special__man {
+  right: 5%;
+  bottom: 85px;
+
+  width: min(34%, 215px);
+
+  animation:
+    manFloat
+    4.5s
+    ease-in-out
+    infinite;
+}
+
+
+/* ==========================================
+   MOVIMIENTO MUJER
+========================================== */
+
+@keyframes womanFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(-1deg);
+  }
+
+  50% {
+    transform:
+      translateY(-12px)
+      rotate(1deg);
+  }
+
+}
+
+
+/* ==========================================
+   MOVIMIENTO HOMBRE
+========================================== */
+
+@keyframes manFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(1deg);
+  }
+
+  50% {
+    transform:
+      translateY(-10px)
+      rotate(-1deg);
+  }
+
+}
+
+
+/* ==========================================
+   TEXTO
+========================================== */
+
+.dress-code-special__content {
+  position: absolute;
+
+  left: 18px;
+  right: 18px;
+  bottom: 22px;
+
+  z-index: 5;
+
+  text-align: center;
+
+  color: white;
+}
+
+
+/* TEXTO PEQUEÑO */
+
+.dress-code-special__eyebrow {
+  margin: 0 0 5px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: .22em;
+
+  color: #f4ce88;
+
+  text-shadow:
+    0 2px 8px rgba(0,0,0,.50);
+}
+
+
+/* TÍTULO */
+
+.dress-code-special__content h2 {
+  margin: 0;
+
+  font-family: "Great Vibes", cursive;
+
+  font-size: clamp(48px, 11vw, 72px);
+
+  font-weight: 400;
+
+  color: #fff9fb;
+
+  text-shadow:
+    0 0 8px rgba(255,255,255,.55),
+    0 0 20px rgba(255,177,208,.35);
+}
+
+
+/* LÍNEA */
+
+.dress-code-special__line {
+  width: 95px;
+  height: 1px;
+
+  margin: 7px auto 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #edc978,
+      transparent
+    );
+}
+
+
+/* PÁRRAFOS */
+
+.dress-code-special__content p {
+  margin: 5px auto;
+
+  max-width: 400px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  color: rgba(255,255,255,.90);
+
+  text-shadow:
+    0 2px 7px rgba(0,0,0,.55);
+}
+
+
+.dress-code-special__reserved strong {
+  color: #ffd2e4;
+}
+
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width: 600px) {
+
+  .dress-code-special {
+    min-height: 520px;
+
+    border-radius: 22px;
+  }
+
+
+  .dress-code-special__woman {
+    left: 2%;
+    bottom: 105px;
+
+    width: 47%;
+  }
+
+
+  .dress-code-special__man {
+    right: 3%;
+    bottom: 108px;
+
+    width: 35%;
+  }
+
+
+  .dress-code-special__content {
+    left: 14px;
+    right: 14px;
+    bottom: 20px;
+  }
+
+
+  .dress-code-special__content h2 {
+    font-size: 52px;
+  }
+
+
+  .dress-code-special__content p {
+    font-size: 12px;
+  }
+
+}
+
+/* ==================================================
+   ✨ EFECTO BRILLO / SHINE EN TODOS LOS BOTONES
+================================================== */
+
+/* Botones normales y enlaces que parecen botón */
+button,
+.btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+
+/* FRANJA DE LUZ */
+button::before,
+.btn::before {
+  content: "";
+
+  position: absolute;
+
+  top: -40%;
+  left: -80%;
+
+  width: 45%;
+  height: 180%;
+
+  z-index: 5;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      115deg,
+      transparent 0%,
+      rgba(255,255,255,0.05) 25%,
+      rgba(255,255,255,0.75) 48%,
+      rgba(255,240,200,0.90) 52%,
+      rgba(255,255,255,0.25) 65%,
+      transparent 100%
+    );
+
+  transform:
+    skewX(-20deg);
+
+  filter:
+    blur(1px);
+
+  animation:
+    buttonShine
+    3.8s
+    ease-in-out
+    infinite;
+}
+
+
+/* MOVIMIENTO IZQUIERDA → DERECHA */
+@keyframes buttonShine {
+
+  0% {
+    left: -80%;
+    opacity: 0;
+  }
+
+  12% {
+    opacity: 1;
+  }
+
+  32% {
+    left: 135%;
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  100% {
+    left: 135%;
+    opacity: 0;
+  }
+}
+
+
+/* PEQUEÑO REALCE AL TOCAR */
+button:active,
+.btn:active {
+  filter:
+    brightness(1.08);
+}
+
+/* =====================================================
+   ✨ ANIMACIONES ESPECIALES DE LA INVITACIÓN
+   Solo título, mamá, padrinos, historia y carrusel
+===================================================== */
+
+
+/* =====================================================
+   ✨ UNA NOCHE INOLVIDABLE
+===================================================== */
+
+.hero-special-title {
+  animation:
+    titleMagicGlow 3.5s ease-in-out infinite;
+}
+
+
+/* brillo suave del título */
+
+@keyframes titleMagicGlow {
+
+  0%,
+  100% {
+    transform: scale(1);
+
+    text-shadow:
+      0 0 7px rgba(255,255,255,.55),
+      0 0 18px rgba(241,146,185,.30);
+  }
+
+  50% {
+    transform: scale(1.025);
+
+    text-shadow:
+      0 0 10px rgba(255,255,255,.90),
+      0 0 25px rgba(255,184,215,.60),
+      0 0 42px rgba(235,164,196,.30);
+  }
+}
+
+
+/* =====================================================
+   💗 IMAGEN DE MAMÁ
+===================================================== */
+
+.photo-animate-mama {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transform-origin: center;
+
+  animation:
+    mamaMagic
+    8s ease-in-out
+    infinite alternate;
+
+  will-change: transform;
+}
+
+
+@keyframes mamaMagic {
+
+  0% {
+    transform:
+      scale(1.01)
+      translateY(0);
+  }
+
+  100% {
+    transform:
+      scale(1.065)
+      translateY(-5px);
+  }
+
+}
+
+
+/* =====================================================
+   ✨ IMAGEN DE PADRINOS
+===================================================== */
+
+.photo-animate-padrinos {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transform-origin: center;
+
+  animation:
+    padrinosMagic
+    9s ease-in-out
+    infinite alternate;
+
+  will-change: transform;
+}
+
+
+@keyframes padrinosMagic {
+
+  0% {
+    transform:
+      scale(1.02)
+      translateX(-3px);
+  }
+
+  100% {
+    transform:
+      scale(1.07)
+      translateX(4px);
+  }
+
+}
+
+
+/* =====================================================
+   ⚽ IMAGEN DE LOS PIES + BALÓN
+===================================================== */
+
+.photo-animate-story {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transform-origin: center center;
+
+  animation:
+    storyFootballMagic
+    8s ease-in-out
+    infinite alternate;
+
+  will-change: transform;
+}
+
+
+@keyframes storyFootballMagic {
+
+  0% {
+    transform:
+      scale(1.01);
+  }
+
+  100% {
+    transform:
+      scale(1.075)
+      translateY(-4px);
+  }
+
+}
+
+
+/* =====================================================
+   📸 FOTOS DEL CARRUSEL
+===================================================== */
+
+.slide-photo {
+  overflow: hidden;
+}
+
+
+/* movimiento lento dentro del marco */
+
+.slide-photo img {
+  transform-origin: center;
+
+  animation:
+    carouselPhotoMagic
+    9s ease-in-out
+    infinite alternate;
+
+  will-change: transform;
+}
+
+
+@keyframes carouselPhotoMagic {
+
+  0% {
+    transform:
+      scale(1.01)
+      translateX(0);
+  }
+
+  100% {
+    transform:
+      scale(1.075)
+      translateX(-5px);
+  }
+
+}
+
+
+/* =====================================================
+   ✨ PEQUEÑO BRILLO SOBRE LAS IMÁGENES
+===================================================== */
+
+.image-placeholder--portrait {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* rayito muy discreto */
+
+.image-placeholder--portrait::before {
+  content: "";
+
+  position: absolute;
+
+  top: -30%;
+  left: -70%;
+
+  width: 30%;
+  height: 160%;
+
+  z-index: 4;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      110deg,
+      transparent,
+      rgba(255,255,255,.03),
+      rgba(255,255,255,.28),
+      rgba(255,226,236,.16),
+      transparent
+    );
+
+  transform:
+    skewX(-20deg);
+
+  animation:
+    photoShimmer
+    7s ease-in-out
+    infinite;
+}
+
+
+@keyframes photoShimmer {
+
+  0%,
+  55% {
+    left: -70%;
+    opacity: 0;
+  }
+
+  60% {
+    opacity: .55;
+  }
+
+  78% {
+    left: 135%;
+    opacity: .55;
+  }
+
+  82%,
+  100% {
+    left: 135%;
+    opacity: 0;
+  }
+
+}
+
+
+/* =====================================================
+   ACCESIBILIDAD
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-special-title,
+  .photo-animate-mama,
+  .photo-animate-padrinos,
+  .photo-animate-story,
+  .slide-photo img {
+
+    animation: none !important;
+    transform: none !important;
+
+  }
+
+}

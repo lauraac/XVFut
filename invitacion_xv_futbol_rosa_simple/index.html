@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#7d3559" />
+  <title>Mis XV · Yareli Mayte</title>
+  <meta name="description" content="Invitación digital de XV años con temática de fútbol en rosa y dorado." />
+  <meta property="og:title" content="Mis XV · Yareli Mayte ✨" />
+  <meta property="og:description" content="Acompáñame a celebrar una noche inolvidable." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./img/portada.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- VIDEO ÚNICO DE INICIO -->
+<!-- VIDEO ÚNICO DE INICIO -->
+<section class="intro" id="intro" aria-label="Video de bienvenida">
+
+  <video
+    id="introVideo"
+    class="intro-video"
+    playsinline
+    muted
+    autoplay
+    preload="auto"
+    poster="./img/intro-poster.jpg"
+  >
+    <source src="./img/intro.mp4" type="video/mp4" />
+  </video>
+
+  <div class="intro-shade"></div>
+
+  <div class="intro-content">
+    <p>Mis XV años</p>
+    <h1 id="introName">Yareli Mayte</h1>
+    <span>Una noche para recordar</span>
+  </div>
+
+  <button
+    id="soundBtn"
+    class="intro-sound-btn"
+    type="button"
+    aria-label="Activar sonido"
+  >
+    <span class="intro-sound-btn__icon">♫</span>
+    <span class="intro-sound-btn__text">Toca para escuchar</span>
+    <span class="intro-sound-btn__sparkle">✦</span>
+  </button>
+<button
+  id="skipIntroBtn"
+  class="skip-intro-btn"
+  type="button"
+>
+  Saltar video
+  <span>›</span>
+</button>
+</section>
+
+
+  <!-- MÚSICA -->
+  <button class="music-btn" id="musicBtn" type="button" aria-label="Reproducir música">♪</button>
+  <audio id="bgMusic" loop preload="none">
+    <source src="./img/Calm.mp3" type="audio/mpeg" />
+  </audio>
+
+  <main class="page-shell" id="mainContent">
+    <!-- PORTADA -->
+    <section class="hero-card reveal" id="inicio">
+      <div class="image-placeholder image-placeholder--hero" data-placeholder="Coloca aquí: img/portada.png">
+        <img src="./img/portada.png" alt="Portada de Mis XV" class="hero-image" onerror="this.style.display='none'" />
+      </div>
+     <div class="hero-info hero-info--special">
+
+  <div class="hero-info__crown">♛</div>
+
+  <p class="hero-kicker">
+    MIS XV AÑOS
+  </p>
+
+  <h2 class="hero-special-title">
+    Una noche inolvidable
+  </h2>
+
+  <p class="hero-special-subtitle">
+    Acompáñame a celebrar este día tan especial
+  </p>
+
+  <div class="date-chip date-chip--special">
+
+    <span class="date-icon">♡</span>
+
+    <div class="date-chip__text">
+      <strong id="heroDate">
+        28 de noviembre de 2026
+      </strong>
+
+      <span id="heroTime">
+        5:00 p. m.
+      </span>
+    </div>
+
+  </div>
+
+  <div class="hero-actions hero-actions--special">
+
+    <a
+      class="btn btn-primary"
+      href="#detalles"
+    >
+      Ver detalles
+    </a>
+
+    <a
+      class="btn btn-ghost"
+      href="#confirmacion"
+    >
+      Confirmar asistencia
+    </a>
+
+  </div>
+
+</div>
+    </section>
+
+    <!-- MAMÁ: SE DEJA ESPACIO PARA UNA IMAGEN ESPECIAL -->
+    <section class="section image-feature reveal">
+      <p class="eyebrow">Con todo mi amor</p>
+      <h2 class="section-title">Mi mamá</h2>
+      <div class="image-placeholder image-placeholder--portrait" data-placeholder="Coloca aquí: img/mama.png">
+      <img
+  src="./img/mama.png"
+  alt="Mamá de la quinceañera"
+  class="photo-animate-mama"
+  onerror="this.style.display='none'"
+/>
+      </div>
+      <p class="section-copy">Aurora Carmona Hernández</p>
+    </section>
+
+    <!-- PADRINOS: SE DEJA ESPACIO PARA UNA IMAGEN ESPECIAL -->
+    <section class="section image-feature reveal">
+      <p class="eyebrow">Personas especiales en mi historia</p>
+      <h2 class="section-title">Mis padrinos</h2>
+      <div class="image-placeholder image-placeholder--portrait" data-placeholder="Coloca aquí: img/padrinos.png">
+       <img
+  src="./img/padrinos.png"
+  alt="Padrinos de la quinceañera"
+  class="photo-animate-padrinos"
+  onerror="this.style.display='none'"
+/>
+      <div class="names-block">
+        <strong>Adrián Carmona Hernández</strong>
+        <span>&amp;</span>
+        <strong>Lizbeth Sandoval Bautista</strong>
+      </div>
+    </section>
+
+    <!-- CUENTA REGRESIVA -->
+<section class="section reveal countdown-section">
+
+  <div class="countdown-balls" aria-hidden="true">
+  </div>
+
+  <p class="eyebrow">
+    El gran día está por comenzar
+  </p>
+
+  <h2 class="section-title">
+    Falta muy poco
+  </h2>
+
+  <p class="event-date">
+    Sábado 28 de noviembre de 2026 · 5:00 p. m.
+  </p>
+
+<div class="countdown">
+
+  <div class="countdown-box">
+    <span class="countdown-ball-inside">⚽</span>
+    <span id="days">00</span>
+    <small>Días</small>
+  </div>
+
+  <div class="countdown-box">
+    <span class="countdown-ball-inside ball-delay-1">⚽</span>
+    <span id="hours">00</span>
+    <small>Horas</small>
+  </div>
+
+  <div class="countdown-box">
+    <span class="countdown-ball-inside ball-delay-2">⚽</span>
+    <span id="minutes">00</span>
+    <small>Min</small>
+  </div>
+
+  <div class="countdown-box">
+    <span class="countdown-ball-inside ball-delay-3">⚽</span>
+    <span id="seconds">00</span>
+    <small>Seg</small>
+  </div>
+
+</div>
+
+</section>
+
+    <!-- HISTORIA -->
+    <section class="section story reveal">
+      <p class="eyebrow">Mi historia</p>
+      <h2 class="section-title">De niña a quinceañera</h2>
+      <div class="image-placeholder image-placeholder--portrait" data-placeholder="Coloca aquí: img/foto1.jpg">
+       <img
+  src="./img/imagen1.png"
+  alt="Recuerdo especial"
+  class="photo-animate-story"
+  onerror="this.style.display='none'"
+/>
+      </div>
+      <p class="section-copy">Quince años de recuerdos, sueños, sonrisas y momentos que hoy quiero celebrar contigo.</p>
+    </section>
+
+    <!-- CARRUSEL -->
+    <section class="section reveal">
+      <p class="eyebrow">Mis mejores recuerdos</p>
+      <h2 class="section-title">Momentos que viven para siempre</h2>
+      <div class="carousel" id="carousel">
+        <button class="carousel-btn carousel-prev" id="prevBtn" aria-label="Anterior">‹</button>
+        <div class="carousel-viewport">
+          <div class="carousel-track" id="track">
+            <article class="slide"><div class="slide-photo"><img src="./img/111.png" alt="Recuerdo 1" onerror="this.style.display='none'"></div><div><h3>Érase una vez...</h3><p>Así comenzó una historia llena de amor y sueños.</p></div></article>
+            <article class="slide"><div class="slide-photo"><img src="./img/1111.png" alt="Recuerdo 2" onerror="this.style.display='none'"></div><div><h3>Mis primeros pasos</h3><p>Pequeños momentos que se volvieron grandes recuerdos.</p></div></article>
+            <article class="slide"><div class="slide-photo"><img src="./img/11111.png" alt="Recuerdo 3" onerror="this.style.display='none'"></div><div><h3>Mi pasión</h3><p>Descubriendo aquello que hace latir más fuerte mi corazón.</p></div></article>
+            <article class="slide"><div class="slide-photo"><img src="./img/111111.png" alt="Recuerdo 4" onerror="this.style.display='none'"></div><div><h3>Creciendo</h3><p>Cada año trajo aventuras, aprendizajes y personas especiales.</p></div></article>
+          </div>
+        </div>
+        <button class="carousel-btn carousel-next" id="nextBtn" aria-label="Siguiente">›</button>
+      </div>
+      <div class="dots" id="dots"></div>
+    </section>
+
+    <!-- IMAGEN INTERMEDIA -->
+    <section class="feature-image reveal">
+      <div class="image-placeholder image-placeholder--wide" data-placeholder="Coloca aquí: img/frase.png">
+        <img src="./img/22222.png" alt="Una noche inolvidable" onerror="this.style.display='none'" />
+      </div>
+    </section>
+
+    <!-- DETALLES -->
+    <section class="section reveal" id="detalles">
+      <p class="eyebrow">Donde comienza la celebración</p>
+      <h2 class="section-title">Detalles del evento</h2>
+      <div class="event-grid">
+        <article class="event-card">
+          <span class="event-icon">⛪</span>
+          <h3>Ceremonia religiosa</h3>
+          <p class="event-name" id="churchName">Dirección por confirmar</p>
+          <p id="churchTime">5:00 p. m.</p>
+          <a class="btn btn-small btn-ghost" id="churchMaps" href="https://www.google.com/maps" target="_blank" rel="noopener">Abrir en Maps</a>
+        </article>
+<article class="event-card">
+  <span class="event-icon event-icon--spin">⚽</span>
+  <h3>Recepción</h3>
+  <p class="event-name" id="venueName">Calle Minos Mz 104 LT 09, San Miguel Teotongo</p>
+  <p id="venueTime">7:00 p. m.</p>
+  <a class="btn btn-small btn-primary" id="venueMaps" href="#" target="_blank">Abrir en Maps</a>
+</article>
+      </div>
+    </section>
+
+<!-- =====================================
+     CÓDIGO DE VESTIMENTA
+===================================== -->
+
+<section class="dress-code-special reveal">
+
+  <!-- FONDO COMPLETO -->
+  <img
+    src="./img/fondovestimenta.png"
+    alt="Código de vestimenta"
+    class="dress-code-special__background"
+  />
+
+  <!-- MUJER -->
+  <img
+    src="./img/vestimentamujer.png"
+    alt="Vestimenta elegante para mujer"
+    class="dress-code-special__person dress-code-special__woman"
+  />
+
+  <!-- HOMBRE -->
+  <img
+    src="./img/vestimenta hombre.png"
+    alt="Vestimenta elegante para hombre"
+    class="dress-code-special__person dress-code-special__man"
+  />
+
+  <!-- TEXTO -->
+  <div class="dress-code-special__content">
+
+    <p class="dress-code-special__eyebrow">
+      ✦ CÓDIGO DE VESTIMENTA ✦
+    </p>
+
+    <h2>Elegante</h2>
+
+    <div class="dress-code-special__line"></div>
+
+    <p>
+      Luce tu mejor estilo para esta noche especial.
+    </p>
+
+    <p class="dress-code-special__reserved">
+      Reserva el <strong>rosa</strong> para la quinceañera.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- =====================================
+     LLUVIA DE SOBRES
+===================================== -->
+
+<section class="gift-card-image reveal">
+
+  <!-- FONDO COMPLETO CON TEXTO -->
+  <img
+    src="./img/fondosobres.png"
+    alt="Lluvia de sobres"
+    class="gift-card-image__background"
+  />
+
+  <!-- SOBRE PNG SIN FONDO -->
+  <img
+    src="./img/sobrefonso.png"
+    alt="Sobre decorativo"
+    class="gift-card-image__envelope"
+  />
+
+  <!-- BRILLOS DECORATIVOS -->
+  <span class="gift-card-image__sparkle sparkle-1">✦</span>
+  <span class="gift-card-image__sparkle sparkle-2">✧</span>
+  <span class="gift-card-image__sparkle sparkle-3">✦</span>
+
+</section>
+
+    <!-- CONFIRMACIÓN SIMPLE: SIN FAMILIAS NI PASES -->
+    <section class="section reveal" id="confirmacion">
+      <p class="eyebrow">Sé parte de esta noche</p>
+      <h2 class="section-title">Confirma tu asistencia</h2>
+      <p class="section-copy">Me encantará saber que compartirás este día conmigo.</p>
+      <button class="btn btn-primary btn-full" id="confirmWhatsappBtn" type="button">Confirmar por WhatsApp ✨</button>
+      <p class="form-msg" id="formMsg">Configura el número de WhatsApp en <strong>script.js</strong>.</p>
+    </section>
+
+    <!-- FINAL -->
+    <section class="finale reveal">
+      <div class="finale-overlay"></div>
+      <div class="finale-content">
+        <p class="eyebrow">Y entonces...</p>
+        <h2>La mejor noche está por comenzar</h2>
+        <p>Gracias por formar parte de este momento tan especial.</p>
+        <strong id="finalName">Yareli Mayte · Mis XV años</strong>
+      </div>
+    </section>
+  </main>
+
+  <!-- VISOR DE FOTOS -->
+  <div class="photo-lightbox" id="photoLightbox" aria-hidden="true">
+    <button class="photo-lightbox-close" id="photoLightboxClose" aria-label="Cerrar">×</button>
+    <div class="photo-lightbox-frame"><img id="photoLightboxImage" src="" alt="Recuerdo" /></div>
+    <p class="photo-lightbox-text">✦ Un recuerdo para siempre ✦</p>
+  </div>
+</body>
+</html>
