@@ -1,16 +1,40 @@
 const CONFIG = {
-  // ===== CAMBIA ESTOS DATOS =====
-  quinceName: 'Yareli Mayte', // nombre temporal
-  eventDate: '2026-10-31T17:00:00',
+
+  // ===== DATOS DEL EVENTO =====
+
+  quinceName: 'Yareli Mayte',
+
+  eventDate: '2026-11-28T17:00:00',
+
   displayDate: 'Sábado 28 de Noviembre de 2026',
+
   displayTime: '5:00 p. m.',
+
+
+  // ===== MISA =====
+
   churchName: 'Calle Cuco Sánchez Mz 145 LT 12, Col. Ampliación Emiliano Zapata',
+
   churchTime: '5:00 p. m.',
-  churchMaps: 'https://www.google.com/maps',
+
+  churchMaps:
+    'https://www.google.com/maps/search/?api=1&query=Calle+Cuco+Sanchez+Mz+145+LT+12+Ampliacion+Emiliano+Zapata',
+
+
+  // ===== RECEPCIÓN =====
+
   venueName: 'Calle Minos Mz 104 LT 09, San Miguel Teotongo',
+
   venueTime: '7:00 p. m.',
-  venueMaps: 'https://www.google.com/maps',
-  whatsapp: '525584512869' // Ejemplo México: 5219991234567
+
+  venueMaps:
+    'https://www.google.com/maps/search/?api=1&query=Calle+Minos+Mz+104+LT+09+San+Miguel+Teotongo',
+
+
+  // ===== WHATSAPP =====
+
+  whatsapp: '525584512869'
+
 };
 
 let slideIndex = 0;
