@@ -17,8 +17,7 @@ const CONFIG = {
 
   churchTime: '5:00 p. m.',
 
-  churchMaps:
-    'https://www.google.com/maps/search/?api=1&query=Calle+Cuco+Sanchez+Mz+145+LT+12+Ampliacion+Emiliano+Zapata',
+ churchMaps: 'https://www.google.com/maps/place/Clinica+Hospital+Emiliano+Zapata/@19.3392168,-98.9808943,17z/data=!3m2!4b1!5s0x85ce1d7b15f13d79:0x67f90370b7831968!4m6!3m5!1s0x85ce1d7b3e188153:0xbb37da55cc0b4090!8m2!3d19.3392168!4d-98.9783194!16s%2Fg%2F1hdz4qzz3?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D',
 
 
   // ===== RECEPCIÓN =====
@@ -27,8 +26,7 @@ const CONFIG = {
 
   venueTime: '7:00 p. m.',
 
-  venueMaps:
-    'https://www.google.com/maps/search/?api=1&query=Calle+Minos+Mz+104+LT+09+San+Miguel+Teotongo',
+venueMaps: 'https://www.google.com/maps/search/Calle+Minas+Mz+104+LT+09,+San+Miguel+Teotongo/@19.3465219,-98.9865803,17z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D',
 
 
   // ===== WHATSAPP =====
