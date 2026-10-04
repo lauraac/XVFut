@@ -812,13 +812,20 @@ body:before {
   position: relative;
   padding: 30px 22px 26px;
   text-align: center;
+
   background:
     radial-gradient(
       circle at 50% 10%,
-      rgba(255, 171, 204, 0.13),
-      transparent 35%
+      rgba(255, 255, 255, 0.16),
+      transparent 36%
     ),
-    linear-gradient(180deg, #5e1838 0%, #48112b 55%, #35101f 100%);
+    linear-gradient(
+      180deg,
+      #d89ab2 0%,
+      #c982a1 55%,
+      #b96f91 100%
+    );
+
   color: white;
 }
 /* CORONA */
@@ -1965,4 +1972,212 @@ button:active,
 .section-title {
   font-weight: 700;
   letter-spacing: 0.02em;
+}
+
+.countdown > div,
+.countdown-box {
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(255, 255, 255, 0.14),
+      transparent 38%
+    ),
+    linear-gradient(
+      180deg,
+      #d89ab2 0%,
+      #c982a1 55%,
+      #b96f91 100%
+    ) !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+
+  box-shadow:
+    0 8px 22px rgba(120, 70, 90, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22) !important;
+}
+.countdown span,
+.countdown-box > span:not(.countdown-ball-inside) {
+  color: #ffffff !important;
+
+  text-shadow:
+    0 1px 2px rgba(105, 45, 70, 0.9),
+    0 2px 4px rgba(105, 45, 70, 0.55);
+}
+
+.countdown small,
+.countdown-box small {
+  color: #fff7fb !important;
+
+  text-shadow:
+    0 1px 2px rgba(105, 45, 70, 0.7);
+}
+.slide {
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(255, 255, 255, 0.14),
+      transparent 38%
+    ),
+    linear-gradient(
+      180deg,
+      #d89ab2 0%,
+      #c982a1 55%,
+      #b96f91 100%
+    ) !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  box-shadow:
+    0 8px 22px rgba(120, 70, 90, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.20);
+}
+.slide h3 {
+  color: #ffffff !important;
+
+  text-shadow:
+    0 1px 2px rgba(105, 45, 70, 0.9),
+    0 2px 4px rgba(105, 45, 70, 0.55);
+}
+
+.slide p {
+  color: #fff7fb !important;
+
+  text-shadow:
+    0 1px 2px rgba(105, 45, 70, 0.75);
+}
+.event-card {
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(255, 255, 255, 0.14),
+      transparent 38%
+    ),
+    linear-gradient(
+      180deg,
+      #d89ab2 0%,
+      #c982a1 55%,
+      #b96f91 100%
+    ) !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+
+  box-shadow:
+    0 8px 22px rgba(120, 70, 90, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.20);
+
+  color: white;
+}
+.event-card h3,
+.event-card p,
+.event-name {
+  color: #ffffff !important;
+
+  text-shadow:
+    0 1px 2px rgba(105, 45, 70, 0.9),
+    0 2px 4px rgba(105, 45, 70, 0.55);
+}
+
+/* =========================================
+   SECCIÓN CONFIRMACIÓN CON IMAGEN
+========================================= */
+
+.confirmacion-image-section {
+  margin: 18px 0;
+}
+
+.confirmacion-image-card {
+  position: relative;
+  width: 100%;
+}
+
+.confirmacion-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 28px;
+}
+
+/* BOTÓN ENCIMA DE LA IMAGEN */
+.confirmacion-overlay-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 64px;
+  transform: translateX(-50%);
+
+  width: min(78%, 540px);
+  min-height: 52px;
+  padding: 12px 20px;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: linear-gradient(180deg, #f4c5da 0%, #e7aeca 100%);
+  color: #6d3550;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  box-shadow:
+    0 8px 22px rgba(171, 101, 132, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+  cursor: pointer;
+}
+
+.confirmacion-overlay-btn:hover {
+  transform: translateX(-50%) translateY(-2px);
+}
+
+.confirmacion-overlay-btn:active {
+  transform: translateX(-50%) scale(0.98);
+}
+
+@media (max-width: 600px) {
+  .confirmacion-overlay-btn {
+    width: 82%;
+    bottom: 52px;
+    min-height: 48px;
+    font-size: 0.86rem;
+    padding: 10px 14px;
+  }
+}
+
+.confirmacion-overlay-btn {
+  position: absolute;
+
+  left: 50%;
+  top: 66%;
+
+  transform: translate(-50%, -50%);
+
+  width: 62%;
+  height: 44px;
+
+  padding: 0 14px;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    180deg,
+    #f4c5da 0%,
+    #e7aeca 100%
+  );
+
+  color: #6d3550;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  box-shadow:
+    0 6px 18px rgba(171, 101, 132, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+
+  cursor: pointer;
+
+  min-height: 0 !important;
+  max-height: 44px !important;
+  box-sizing: border-box;
 }
