@@ -26,7 +26,7 @@ const CONFIG = {
 
   venueTime: '7:00 p. m.',
 
-venueMaps: 'https://www.google.com/maps/search/Calle+Minas+Mz+104+LT+09,+San+Miguel+Teotongo/@19.3465219,-98.9865803,17z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D',
+venueMaps: 'https://www.google.com/maps/@19.3446608,-98.9840238,2326a,75y,25.27h,90.52t/data=!3m7!1e1!3m5!1s-3mKJ42lrCFQsgW21JVSeA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.5235264446411207%26panoid%3D-3mKJ42lrCFQsgW21JVSeA%26yaw%3D25.268562459315035!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D',
 
 
   // ===== WHATSAPP =====
