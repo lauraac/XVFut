@@ -10,7 +10,7 @@ const CONFIG = {
   venueName: 'Calle Minos Mz 104 LT 09, San Miguel Teotongo',
   venueTime: '7:00 p. m.',
   venueMaps: 'https://www.google.com/maps',
-  whatsapp: '' // Ejemplo México: 5219991234567
+  whatsapp: '525584512869' // Ejemplo México: 5219991234567
 };
 
 let slideIndex = 0;
