@@ -40,7 +40,7 @@ a {
 .page-shell{
   width:min(100%,720px);
   margin:0 auto;
-  padding: 0 14px;
+  
 }
 body:before {
   content: "";
