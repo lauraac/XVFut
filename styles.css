@@ -2181,3 +2181,76 @@ button:active,
   max-height: 44px !important;
   box-sizing: border-box;
 }
+/* =========================================
+   EVENTO CON IMAGEN + BOTÓN ENCIMA
+========================================= */
+
+.event-card-image {
+  position: relative;
+  padding: 0 !important;
+  overflow: hidden;
+  border-radius: 24px;
+  background: transparent !important;
+}
+
+.event-card-image__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+}
+
+/* BOTÓN ENCIMA DE LA IMAGEN */
+.event-card-image__btn {
+  position: absolute;
+
+  left: 50%;
+  bottom: 7%;
+
+  transform: translateX(-50%);
+
+  width: 58%;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 14px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    180deg,
+    #f4c5da 0%,
+    #e7aeca 100%
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+
+  color: #6d3550;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 6px 16px rgba(130, 70, 95, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+
+  z-index: 5;
+}
+
+/* evitar que cambie de tamaño */
+.event-card-image__btn {
+  min-height: 0 !important;
+  max-height: 42px !important;
+  box-sizing: border-box;
+}
+
+/* al tocar */
+.event-card-image__btn:active {
+  transform: translateX(-50%) scale(0.97);
+}

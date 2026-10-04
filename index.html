@@ -27,7 +27,7 @@
 
   <meta
     property="og:image"
-    content="https://lauraac.github.io/XVFut/img/preview.jpg"
+    content="https://lauraac.github.io/XVFut/img/portad13.jpeg"
   />
 
   <meta property="og:image:type" content="image/png" />
@@ -43,7 +43,7 @@
   />
   <meta
     name="twitter:image"
-    content="https://lauraac.github.io/XVFut/img/preview"
+    content="https://lauraac.github.io/XVFut/img/portad13.jpeg"
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -291,26 +291,56 @@
     </section>
 
     <!-- DETALLES -->
-    <section class="section reveal" id="detalles">
-      <p class="eyebrow">Donde comienza la celebración</p>
-      <h2 class="section-title">Detalles del evento</h2>
-      <div class="event-grid">
-        <article class="event-card">
-          <span class="event-icon">⛪</span>
-          <h3>Ceremonia religiosa</h3>
-          <p class="event-name" id="churchName">Dirección por confirmar</p>
-          <p id="churchTime">5:00 p. m.</p>
-          <a class="btn btn-small btn-ghost" id="churchMaps" href="https://www.google.com/maps" target="_blank" rel="noopener">Abrir en Maps</a>
-        </article>
-<article class="event-card">
-  <span class="event-icon event-icon--spin">⚽</span>
-  <h3>Recepción</h3>
-  <p class="event-name" id="venueName">Calle Minos Mz 104 LT 09, San Miguel Teotongo</p>
-  <p id="venueTime">7:00 p. m.</p>
-  <a class="btn btn-small btn-primary" id="venueMaps" href="#" target="_blank">Abrir en Maps</a>
-</article>
-      </div>
-    </section>
+<section class="section reveal" id="detalles">
+  <p class="eyebrow">Donde comienza la celebración</p>
+  <h2 class="section-title">Detalles del evento</h2>
+
+  <div class="event-grid">
+
+    <!-- CEREMONIA -->
+    <article class="event-card event-card-image">
+
+      <img
+        src="./img/ceremonia.png"
+        alt="Ceremonia religiosa"
+        class="event-card-image__photo"
+      />
+
+      <a
+        class="event-card-image__btn"
+        id="churchMaps"
+        href="https://www.google.com/maps"
+        target="_blank"
+        rel="noopener"
+      >
+        Abrir en Maps
+      </a>
+
+    </article>
+
+    <!-- RECEPCIÓN -->
+    <article class="event-card event-card-image">
+
+      <img
+        src="./img/recepcion.png"
+        alt="Recepción"
+        class="event-card-image__photo"
+      />
+
+      <a
+        class="event-card-image__btn"
+        id="venueMaps"
+        href="#"
+        target="_blank"
+        rel="noopener"
+      >
+        Abrir en Maps
+      </a>
+
+    </article>
+
+  </div>
+</section>
 
 <!-- =====================================
      CÓDIGO DE VESTIMENTA
